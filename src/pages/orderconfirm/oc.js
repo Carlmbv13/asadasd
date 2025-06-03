@@ -45,7 +45,6 @@ const OrderConfirmation = () => {
     }
   }, [state]); 
 
-  const [isCanceled, setIsCanceled] = useState(false);
 
   const handlePrintOrder = () => {
     const printWindow = window.open('', '_blank', 'height=800,width=750');
@@ -136,11 +135,6 @@ const OrderConfirmation = () => {
     }, 750); 
   };
 
-  const handleCancelOrder = () => { 
-    console.log("Attempting to cancel order:", orderData.orderId);
-    setIsCanceled(true);
-    alert(`Order ${orderData.orderId} cancellation requested (Demo Feature).`);
-  };
   const handleTrackOrder = () => navigate('/ordertrack', { state: { orderId: orderData.orderId } });
 
   if (orderData === defaultOrderData && (!state || !state.orderData)) {
@@ -215,11 +209,11 @@ const OrderConfirmation = () => {
         <div className="order-actions"> 
           <button className="action-btn print-btn" onClick={handlePrintOrder}>Print Order Details</button>
           <button className="action-btn track-btn" onClick={handleTrackOrder}>Track My Order</button>
-          {!isCanceled && (<button className="action-btn cancel-btn" onClick={handleCancelOrder}>Cancel Order (Demo)</button>)}
+       
         </div>
-         <Link to="/products" className="continue-shopping-link-oc">Continue Shopping</Link>
+         <Link to="/product" className="continue-shopping-link-oc">Continue Shopping</Link>
       </div>
-      {isCanceled && (<div className="cancel-notification">Order ({orderData.orderId}) Cancellation Request Submitted (Demo).</div>)}
+    
     </div>
   );
 };
