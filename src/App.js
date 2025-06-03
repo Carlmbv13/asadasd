@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import List from './pages/List/List';
-import Search from './Components/Header/Search/Search';
+
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart.js';
@@ -97,7 +97,7 @@ function App() {
     
 
               <Route path="/contact" element={<Contact />} />
-              <Route path="/search" element={<Search />} />
+             
               <Route path="/list" element={<List />} />
               <Route path="/ShoppingCart" element={<ShoppingCart />} />
               <Route path="/Dashboard" element={<Dashboard />} />

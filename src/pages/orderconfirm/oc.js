@@ -26,7 +26,6 @@ const OrderConfirmation = () => {
     appliedDiscountAmount: 0,
     customerDetails: { shippingAddress: "Not available" }
   };
-
   const orderData = state?.orderData || defaultOrderData;
 
   useEffect(() => {
